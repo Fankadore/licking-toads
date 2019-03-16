@@ -1,0 +1,27 @@
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+:root {
+	--dark: rgba(23, 53, 27, 1);
+	--dark-trans: rgba(23, 53, 27, 0.8);
+	--light: rgba(246, 243, 234, 1);
+	--light-trans: rgba(246, 243, 234, 0.5);
+	--color-dark: rgba(10, 131, 77, 1);
+	--color-dark-trans: rgba(10, 131, 77, 0.9);
+	--color-light: rgba(125, 194, 67, 1);
+	--color-light-trans: rgba(125, 194, 67, 0.5);
+}
+
+.App {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-areas: 
+		"header"
+		"navbar"
+		"main"
+		"footer";
+		min-height: 100vh;
+}

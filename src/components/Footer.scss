@@ -1,0 +1,25 @@
+@import '../App.scss';
+
+.footer {
+	grid-area: footer;
+	min-height: 2rem;
+	max-height: 4rem;
+	background-color: var(--dark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0.75rem;
+
+	&__text {
+		font-family: 'Carrois Gothic SC', sans-serif;
+		font-size: 0.75rem;
+		color: var(--color-light);
+		margin-right: 1rem;
+	}
+
+	&__icon {
+		margin: 0.5rem;
+		font-size: 1.25rem;
+		color: var(--color-light);
+	}
+}

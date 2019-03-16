@@ -1,0 +1,43 @@
+@import '../App.scss';
+
+.navbar {
+	grid-area: navbar;
+	position: sticky;
+	top: 0;
+	min-height: 2rem;
+	background-color: var(--dark);
+
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0;
+	padding: 0;
+	
+	&__link {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		border-bottom: 8px solid var(--dark);
+		
+		&--active {
+			border-bottom: 8px solid var(--light);
+		}
+
+		&-icon {
+			margin: 1rem 0.5rem;
+			color: var(--light);
+		}
+		
+		&-label {
+			margin: 1rem 0.25rem;
+			color: var(--light);
+			text-align: center;
+			text-decoration: none;
+			font-family: 'Carrois Gothic SC', sans-serif;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+	}
+}
