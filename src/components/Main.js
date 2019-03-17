@@ -3,11 +3,11 @@ import './Main.scss';
 import Card from './Card.js';
 
 function Main(props) {
-	const { cards } = props.content;
+	const { items } = props.content;
 
 	return (
 		<div className="main">
-			{cards.map((card, index) => <Card key={index} content={card} />)}
+			{items.map((item, index) => <Card key={index} content={item} />)}
 		</div>
 	)
 }

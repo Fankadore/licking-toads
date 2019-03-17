@@ -30,6 +30,24 @@
 			transition: opacity 1s;
 		}
 	}
+
+	&__slide {
+		background-color: #fff;
+		box-shadow: 2px 2px 8px var(--dark);
+
+		flex-basis: 100%;
+		margin: 0.5rem;
+		padding: 0.25rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&-text {
+			margin: 0;
+			padding: 0;
+		}
+	}
 }
 
 @media (min-width: 768px) and (orientation: landscape) {

@@ -1,6 +1,6 @@
 const content = {
 	home: {
-		cards: [
+		items: [
 			{
 				title: "Reach Your Customers",
 				text: [
@@ -21,7 +21,7 @@ const content = {
 		]
 	},
 	about: {
-		cards: [
+		items: [
 			{
 				title: "Just What You Need",
 				text: [
@@ -79,6 +79,11 @@ const content = {
 				label: "About",
 				link: "/about",
 				iconClass: "fas fa-info"
+			},
+			{
+				label: "Viewer",
+				link: "/viewer",
+				iconClass: "fas fa-search"
 			},
 			{
 				label: "Contact",

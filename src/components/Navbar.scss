@@ -18,20 +18,22 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		padding: 8px;
+		padding-bottom: 0;
 
 		border-bottom: 8px solid var(--dark);
 		
 		&--active {
-			border-bottom: 8px solid var(--light);
+			border-bottom: 8px solid var(--color-dark);
 		}
 
 		&-icon {
-			margin: 1rem 0.5rem;
+			margin: 0.25rem;
 			color: var(--light);
 		}
 		
 		&-label {
-			margin: 1rem 0.25rem;
+			margin: 0.25rem;
 			color: var(--light);
 			text-align: center;
 			text-decoration: none;
