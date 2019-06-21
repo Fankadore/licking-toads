@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import content from "./data/content";
 import "./App.scss";
@@ -10,55 +10,46 @@ import Main from "./components/Main";
 import Contact from "./components/Contact";
 import Viewer from "./components/Viewer";
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			items: [],
-			isLoaded: false
-		};
-	}
+function App(props) {
+	const [items, setItems] = useState(null);
 
-	componentDidMount() {
+	const fetchData = () => {
 		fetch("https://jsonplaceholder.typicode.com/users")
 			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					items: json,
-					isLoaded: true
-				});
-			});
-	}
+			.then(json => setItems(json));
+	};
 
-	render() {
-		return (
-			<Router>
-				<div className="App">
-					<Header content={content.header} />
-					<Navbar content={content.navbar} />
-					<Switch>
-						<Route
-							exact path="/"
-							render={routeProps => (<Main {...routeProps} content={content.home} />)}
-						/>
-						<Route
-							exact path="/about"
-							render={routeProps => (<Main {...routeProps} content={content.about} />)}
-						/>
-						<Route
-							exact path="/contact"
-							render={routeProps => (<Contact {...routeProps} content={content.contact} />)}
-						/>
-						<Route
-							exact path="/viewer"
-							render={routeProps => (<Viewer {...routeProps} content={this.state} />)}
-						/>
-					</Switch>
-					<Footer content={content.contact} />
-				</div>
-			</Router>
-		);
-	}
+	// Render
+	const renderHome = () => {
+		return <Main content={content.home} />
+	};
+	const renderAbout = () => {
+		return <Main content={content.about} />
+	};
+	const renderViewer = () => {
+		return <Viewer items={items} />
+	};
+	const renderContact = () => {
+		return <Contact content={content.contact} />
+	};
+
+	useEffect(fetchData, []);
+
+	return (
+		<Router>
+			<div className="App">
+				<Header content={content.header} />
+				<Navbar content={content.navbar} />
+				<Switch>
+					<Route exact path="/" render={renderHome} />
+					<Route exact path="/about" render={renderAbout} />
+					<Route exact path="/viewer" render={renderViewer} />
+					<Route exact path="/contact" render={renderContact} />
+				</Switch>
+				<Footer content={content.contact} />
+			</div>
+		</Router>
+	);
 }
 
 export default App;
